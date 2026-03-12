@@ -7,18 +7,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root { --p: #ff4757; --s: #2f3542; --bg: #f8f9fa; --card: #ffffff; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--s); margin: 0; padding: 15px; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--s); margin: 0; padding: 15px; line-height: 1.5; }
         header { text-align: center; padding: 30px 0; background: linear-gradient(135deg, #ff4757, #ff6b81); color: white; border-radius: 20px; box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3); margin-bottom: 20px; }
         .hotel-card { background: #e8f5e9; border-left: 6px solid #2ecc71; border-radius: 12px; padding: 15px; margin-bottom: 20px; }
         .day-card { background: var(--card); border-radius: 15px; padding: 15px; margin-bottom: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
-        .day-title { font-size: 1.3rem; color: var(--p); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px; display: flex; align-items: center; font-weight: bold; }
+        .day-title { font-size: 1.3rem; color: var(--p); border-bottom: 2px solid #f1f2f6; padding-bottom: 10px; margin-bottom: 15px; display: flex; align-items: center; font-weight: bold; }
         .timeline { position: relative; padding-left: 20px; border-left: 2px solid #eee; margin-left: 10px; }
         .event { position: relative; margin-bottom: 20px; }
         .event::before { content: ''; position: absolute; left: -26px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--p); border: 2px solid white; }
         .name { font-weight: bold; display: block; }
         .time { font-size: 0.85rem; color: #747d8c; }
         .desc { font-size: 0.9rem; color: #57606f; margin-top: 3px; }
-        .btn-group { margin-top: 8px; display: flex; gap: 8px; }
+        .btn-group { margin-top: 8px; display: flex; gap: 8px; flex-wrap: wrap; }
         .btn { background: #f1f2f6; color: #57606f; text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; display: flex; align-items: center; }
         .btn:hover { background: var(--p); color: white; }
         .btn i { margin-right: 5px; }
@@ -32,63 +32,62 @@
 </header>
 
 <div class="hotel-card">
-    <div class="day-title" style="color:#27ae60;"><i class="fas fa-home"></i> 住宿地點</div>
-    <div class="name">弘大/新村 民宿 (Changcheon-dong 100-86)</div>
-    <div class="desc">機場鐵路「弘大站」6號出口步行10分鐘</div>
+    <div class="day-title" style="color:#27ae60;"><i class="fas fa-home"></i> 住宿地點 (Accommodation)</div>
+    <div class="name">弘大/新村 民宿 (창천동 100-86)</div>
+    <div class="desc">機場鐵路「弘大站」6號出口步行約 10 分鐘</div>
     <div class="btn-group">
-        <a href="https://www.google.com/maps/search/?api=1&query=Changcheon-dong+100-86+Seoul" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖導航</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Changcheon-dong+100-86+Seoul" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> Google 地圖</a>
+        <a href="tel:+821030254466" class="btn"><i class="fas fa-phone"></i> 聯絡電話</a>
     </div>
 </div>
 
 <div class="day-card">
-    <div class="day-title"><i class="fas fa-plane"></i> Day 1 | 3/24 抵達</div>
+    <div class="day-title"><i class="fas fa-plane-arrival"></i> Day 1 | 3/24 (Tue)</div>
     <div class="timeline">
-        <div class="event">
-            <span class="time">10:55</span>
-            <span class="name">抵達仁川國際機場 (ICN)</span>
-            <div class="desc">搭乘機場鐵路 (AREX) 一般列車前往弘大站</div>
-        </div>
-        <div class="event">
-            <span class="name">民宿 Check-in</span>
-            <div class="desc">放行李、簡單休息</div>
-        </div>
-        <div class="event">
-            <span class="name">Egg Drop 🥪</span>
-            <div class="desc">經典韓式吐司當午餐</div>
-            <div class="btn-group">
-                <a href="https://maps.app.goo.gl/yFMgHJNagG2h52nT7?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a>
-            </div>
-        </div>
-        <div class="event">
-            <span class="name">南山首爾塔 🗼</span>
-            <div class="desc">搭乘纜車看夕陽與夜景</div>
-            <div class="btn-group">
-                <a href="https://maps.app.goo.gl/3pnewjcHePfr3oQF6?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a>
-            </div>
-        </div>
+        <div class="event"><span class="time">10:55</span><span class="name">抵達仁川機場 (ICN)</span><div class="desc">搭乘機場鐵路 (AREX) 前往弘大站</div></div>
+        <div class="event"><span class="name">民宿 Check-in</span><div class="desc">放行李、稍作休息</div></div>
+        <div class="event"><span class="name">Egg Drop 🥪</span><div class="desc">人氣韓式吐司</div><div class="btn-group"><a href="https://maps.app.goo.gl/yFMgHJNagG2h52nT7?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
+        <div class="event"><span class="name">首爾塔 & 南山纜車 🗼</span><div class="desc">欣賞首爾夜景</div><div class="btn-group"><a href="https://maps.app.goo.gl/3pnewjcHePfr3oQF6?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
     </div>
 </div>
 
 <div class="day-card">
-    <div class="day-title"><i class="fas fa-camera-retro"></i> Day 2 | 3/25 經典首爾</div>
+    <div class="day-title"><i class="fas fa-utensils"></i> Day 2 | 3/25 (Wed)</div>
     <div class="timeline">
-        <div class="event">
-            <span class="time">08:00</span>
-            <span class="name">Artist Bakery 🥖</span>
-            <div class="desc">超人氣鹽可頌，建議先抽號碼牌</div>
-        </div>
-        <div class="event">
-            <span class="name">北村韓屋村 & 景福宮</span>
-            <div class="desc">穿韓服漫步歷史古蹟</div>
-        </div>
-        <div class="event">
-            <span class="name">明洞夜市 & Olive Young</span>
-            <div class="desc">掃貨化妝品、吃路邊攤小吃</div>
-        </div>
+        <div class="event"><span class="time">08:00</span><span class="name">Artist Bakery 🥖</span><div class="desc">鹽可頌排隊名店</div><div class="btn-group"><a href="https://maps.app.goo.gl/gjgSjKAwWLHzaFs99?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
+        <div class="event"><span class="name">北村韓屋村 & 景福宮</span><div class="desc">韓服體驗與歷史散步</div><div class="btn-group"><a href="https://maps.app.goo.gl/DTjt1Ueqk4LCVSb3A?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
+        <div class="event"><span class="name">明洞夜市 & Olive Young 🛍️</span><div class="desc">掃貨與在地小吃</div><div class="btn-group"><a href="https://maps.app.goo.gl/dxVrzmtrTqCddh3P8?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
     </div>
 </div>
 
-<p style="text-align: center; color: #ccc; font-size: 0.8rem;">Enjoy your trip! ✈️</p>
+<div class="day-card">
+    <div class="day-title"><i class="fas fa-grin-stars"></i> Day 3 | 3/26 (Thu)</div>
+    <div class="timeline">
+        <div class="event"><span class="name">樂天世界 🎡</span><div class="desc">整日遊樂園行程</div><div class="btn-group"><a href="https://maps.app.goo.gl/xoSHGoYnYekSJGg39?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
+        <div class="event"><span class="name">聖水洞 & Dior 旗艦店</span><div class="desc">文青工業風與時尚打卡</div><div class="btn-group"><a href="https://maps.app.goo.gl/YwadHED39EKLBxa4A?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
+        <div class="event"><span class="name">ITALYGUKSI 🍝</span><div class="desc">創意韓式義大利麵</div><div class="btn-group"><a href="https://maps.app.goo.gl/YXVDfx1bmx5xEorf8?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
+    </div>
+</div>
+
+<div class="day-card">
+    <div class="day-title"><i class="fas fa-shopping-bag"></i> Day 4 | 3/27 (Fri)</div>
+    <div class="timeline">
+        <div class="event"><span class="name">弘大商圈 🛍️</span><div class="desc">流行服飾、街頭表演 (鄰近住宿)</div><div class="btn-group"><a href="https://maps.app.goo.gl/9WuT1YKYQnfiL8wv9?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
+        <div class="event"><span class="name">汝矣島漢江公園 ⛲️</span><div class="desc">野餐看漢江、現代百貨 The Hyundai Seoul</div><div class="btn-group"><a href="https://maps.app.goo.gl/axn39HJraQ43odzv6?g_st=ic" class="btn" target="_blank"><i class="fas fa-map-marker-alt"></i> 地圖</a></div></div>
+    </div>
+</div>
+
+<div class="day-card">
+    <div class="day-title"><i class="fas fa-plane-departure"></i> Day 5 | 3/28 (Sat)</div>
+    <div class="timeline">
+        <div class="event"><span class="time">08:30</span><span class="name">前往機場</span><div class="desc">於弘大站搭乘機場鐵路</div></div>
+        <div class="event"><span class="time">12:00</span><span class="name">飛機起飛 ✈️</span><div class="desc">帶著戰利品回家</div></div>
+    </div>
+</div>
+
+<footer>
+    <p style="text-align: center; color: #ccc; padding-bottom: 20px;">Enjoy your trip to Seoul! ✈️</p>
+</footer>
 
 </body>
 </html>
