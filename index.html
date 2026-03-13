@@ -3,132 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🇰🇷 2026 首爾五日遊行程表</title>
+    <title>🇰🇷 2026 首爾五日全攻略</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --p: #ff4757; --s: #2f3542; --bg: #f1f2f6; --card: #ffffff; --naver: #03cf5d; --google: #4285f4; --air: #004797; --house: #ff385c; }
-        body { font-family: -apple-system, "Microsoft JhengHei", sans-serif; background: var(--bg); color: var(--s); margin: 0; padding: 10px; line-height: 1.6; }
-        header { text-align: center; padding: 30px 0; background: linear-gradient(135deg, #ff4757, #ff6b81); color: white; border-radius: 20px; box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3); margin: 10px; }
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px; }
-        .info-card { background: white; padding: 15px; border-radius: 15px; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .air-header { color: var(--air); font-weight: bold; margin-bottom: 5px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        .house-header { color: var(--house); font-weight: bold; margin-bottom: 5px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        .day-card { background: var(--card); border-radius: 20px; padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .day-title { font-size: 1.3rem; color: var(--p); border-bottom: 2px solid #eee; padding-bottom: 12px; margin-bottom: 20px; display: flex; align-items: center; font-weight: bold; }
-        .timeline { position: relative; padding-left: 15px; border-left: 2px solid #eee; margin-left: 10px; }
-        .event { position: relative; margin-bottom: 30px; }
-        .event::before { content: ''; position: absolute; left: -22px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--p); border: 2px solid white; }
-        .name { font-size: 1.1rem; font-weight: bold; display: block; color: #2f3542; margin-bottom: 5px; }
-        .note { background: #fff9db; padding: 12px; border-radius: 12px; font-size: 0.85rem; border-left: 5px solid #f1c40f; margin: 10px 0; color: #444; }
-        .img-box { width: 100%; border-radius: 12px; margin: 12px 0; overflow: hidden; height: 180px; background: #eee; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .btn-group { display: flex; gap: 8px; margin-top: 10px; }
-        .btn { text-decoration: none; padding: 10px; border-radius: 10px; font-size: 0.8rem; flex: 1; text-align: center; font-weight: bold; color: white !important; }
-        .btn-naver { background: var(--naver); }
-        .btn-google { background: var(--google); }
+        :root { --p: #1e272e; --s: #485e6a; --bg: #ffffff; --accent: #ff4757; --naver: #03cf5d; --border: #e1e4e8; }
+        body { font-family: -apple-system, "Segoe UI", "Microsoft JhengHei", sans-serif; background: var(--bg); color: var(--p); margin: 0; padding: 20px; line-height: 1.8; }
+        header { border-bottom: 3px solid var(--p); padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { font-size: 1.8rem; margin: 0; letter-spacing: 1px; }
+        .info-section { background: #f8f9fa; border: 1px solid var(--border); padding: 20px; border-radius: 8px; margin-bottom: 30px; font-size: 0.95rem; }
+        .day-block { margin-bottom: 50px; }
+        .day-header { font-size: 1.5rem; font-weight: bold; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; }
+        .day-header span { font-size: 0.9rem; color: #999; margin-left: 15px; font-weight: normal; }
+        .event-item { margin-bottom: 30px; padding-left: 20px; border-left: 2px solid #eee; }
+        .event-name { font-size: 1.2rem; font-weight: bold; display: block; margin-bottom: 8px; }
+        .event-detail { font-size: 0.92rem; color: var(--s); text-align: justify; }
+        .tips { background: #fff5f5; padding: 15px; border-radius: 6px; margin-top: 10px; font-size: 0.88rem; border: 1px dashed var(--accent); }
+        .btn-group { margin-top: 15px; display: flex; gap: 10px; }
+        .btn { text-decoration: none; padding: 8px 16px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; border: 1px solid #ddd; color: #333; transition: 0.3s; }
+        .btn:hover { background: #f0f0f0; }
+        .btn-naver { color: var(--naver) !important; border-color: var(--naver); }
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #aaa; font-size: 0.8rem; }
+        .important { color: #d63031; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>SEOUL TRIP 2026</h1>
-    <p>3/24 - 3/28 | 尚潾的首爾冒險導航</p>
+    <h1>SEOUL ITINERARY 2026</h1>
+    <p>3/24 - 3/28 | 尚潾的首爾五日行程規劃</p>
 </header>
 
-<div class="info-grid">
-    <div class="info-card">
-        <div class="air-header"><i class="fas fa-plane"></i> 航班 (China Airlines)</div>
-        去程 CI 0164: 07:05 (T1)<br>
-        回程 CI 0165: 12:00 (T2)<br>
-        代號: <b>FNNDVY</b>
-    </div>
-    <div class="info-card">
-        <div class="house-header"><i class="fas fa-home"></i> 住宿 (Airbnb)</div>
-        房東: Jhdm (2人)<br>
-        地址: <b>창천動100-86</b><br>
-        確認碼: <b>HMWBTC5MQT</b>
-    </div>
+<div class="info-section">
+    <strong>✈️ 航班資訊：</strong> 中華航空 CI 0164 (3/24 07:05 KHH ➔ 10:55 ICN T1) / CI 0165 (3/28 12:00 ICN T2 ➔ 14:15 KHH) <br>
+    <strong>🎟️ 訂位代號：</strong> FNNDVY <br>
+    <strong>🏠 住宿資訊：</strong> 弘大/新村區 Airbnb (창천동 100-86) | 確認碼：HMWBTC5MQT <br>
+    <strong>📌 提醒：</strong> 韓國目前流行「杜拜巧克力」與「鹽可頌」，建議排隊景點預留時間。
 </div>
 
-<div class="day-card">
-    <div class="day-title"><i class="fas fa-map-pin"></i> Day 1 | 3/24 入住與南山</div>
-    <div class="timeline">
-        <div class="event">
-            <span class="name">抵達民宿 Check-in (15:00後)</span>
-            <div class="note">📍 地址：창천동 100-86 (靠近弘大、新村)。</div>
-            <div class="btn-group">
-                <a href="https://map.naver.com/v5/search/창천동100-86" class="btn btn-naver" target="_blank">Naver 民宿導航</a>
-            </div>
+<div class="day-block">
+    <div class="day-header">Day 1 | 3/24 火曜日 <span>抵達與南山絕景</span></div>
+    
+    <div class="event-item">
+        <span class="event-name">仁川機場 ➔ 弘大民宿 (창천동 100-86)</span>
+        <div class="event-detail">
+            抵達 ICN T1 後，先領取網卡/換錢。搭乘 **AREX 機場快線** 至弘大入口站。民宿位於弘大與新村交界，出站後步行約 10 分鐘。15:00 即可辦理入住。
         </div>
-        <div class="event">
-            <span class="name">Egg Drop 🥪 ➔ 南山塔 🗼</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1538669715516-b238117fbd99?auto=format&fit=crop&w=600&q=80" alt="Seoul Tower"></div>
-            <div class="note">⭐ 必做：南山纜車、愛情鎖牆看夜景。記得去「取票處」換票。</div>
+        <div class="btn-group">
+            <a href="https://map.naver.com/v5/search/창천동100-86" class="btn btn-naver" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map 導航</a>
         </div>
     </div>
-</div>
 
-<div class="day-card">
-    <div class="day-title"><i class="fas fa-camera"></i> Day 2 | 3/25 韓屋與明洞</div>
-    <div class="timeline">
-        <div class="event">
-            <span class="name">Artist Bakery 🥖 ➔ 景福宮 🎎</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80" alt="Gyeongbokgung"></div>
-            <div class="note">⭐ 景福宮週二公休，若 3/25 剛好週二請調整行程。穿韓服免門票！</div>
+    <div class="event-item">
+        <span class="event-name">Egg Drop 弘大店 🥪</span>
+        <div class="event-detail">
+            韓國超人氣連鎖吐司店，特色是奶油香味濃郁的後切歐姆蛋。推薦點餐：**Garlic Bacon Cheese (大蒜培根起司)**。
         </div>
-        <div class="event">
-            <span class="name">明洞夜市 ➔ Olive Young 🛍️</span>
-            <div class="note">⭐ 必找：龍鬚糖小哥表演。</div>
-            <div class="btn-group">
-                <a href="https://naver.me/x0aE9U5h" class="btn btn-naver" target="_blank">明洞 Naver</a>
-            </div>
+    </div>
+
+    <div class="event-item">
+        <span class="event-name">南山纜車 ➔ 愛情鎖 ➔ 首爾塔 🗼</span>
+        <div class="event-detail">
+            搭乘纜車直達南山頂端。這裡可以俯瞰整個首爾市區景觀。記得先在 Klook/KKday 購票者需先在「取票處」換票。愛情鎖牆是經典拍照點，建議傍晚前抵達，可以看到日落與夜景兩種美感。
+        </div>
+        <div class="tips">
+            💡 **交通提醒：** 從民宿可搭地鐵至「明洞站」3 號出口，步行約 10 分鐘抵達纜車乘車處。
         </div>
     </div>
 </div>
 
-<div class="day-card">
-    <div class="day-title"><i class="fas fa-star"></i> Day 3 | 3/26 樂天世界與聖水洞</div>
-    <div class="timeline">
-        <div class="event">
-            <span class="name">樂天世界 (Lotte World) 🎡</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1513889953293-4ad464fb7a79?auto=format&fit=crop&w=600&q=80" alt="Lotte World"></div>
+<div class="day-block">
+    <div class="day-header">Day 2 | 3/25 水曜日 <span>傳統與購物的一天</span></div>
+    
+    <div class="event-item">
+        <span class="event-name">Artist Bakery 安國站 🥖</span>
+        <div class="event-detail">
+            倫敦貝果博物館 (London Bagel Museum) 同體系推出的鹽可頌專賣店。這裡的鹽可頌口味非常多元，建議早上 9 點前抵達抽號碼牌。
         </div>
-        <div class="event">
-            <span class="name">聖水洞探店 (Dior / 韓貞仙 / Softbar)</span>
-            <div class="note">🍫 必買：韓貞仙杜拜巧克力。</div>
-            <div class="btn-group">
-                <a href="https://naver.me/F0w2O4Oq" class="btn btn-naver" target="_blank">Dior 聖水</a>
-            </div>
+    </div>
+
+    <div class="event-item">
+        <span class="event-name">北村韓屋村 ➔ 景福宮 🎎</span>
+        <div class="event-detail">
+            漫步於擁有數百年歷史的韓屋巷弄間。**景福宮週二公休**，請確認今日是否開放。建議租借韓服，穿韓服者可免費進入景福宮，拍照極具特色。
+        </div>
+    </div>
+
+    <div class="event-item">
+        <span class="event-name">明洞夜市 ➔ Olive Young 🛍️</span>
+        <div class="event-detail">
+            明洞是首爾最繁華的商圈。夜市約下午 4 點後攤販陸續出來，可以尋找「龍鬚糖小哥」看他的招牌表演。隨後前往 **Olive Young 旗艦店** 補貨彩妝與保養品。
+        </div>
+        <div class="tips">
+            🛍️ **退稅提醒：** Olive Young 滿額 3 萬韓幣以上即可現場退稅，請隨身攜帶護照。
         </div>
     </div>
 </div>
 
-<div class="day-card">
-    <div class="day-title"><i class="fas fa-walking"></i> Day 4 | 3/27 弘大生活與漢江</div>
-    <div class="timeline">
-        <div class="event">
-            <span class="name">弘大商圈 🛍️ ➔ 汝矣島漢江公園 ⛲️</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="Hangang"></div>
-            <div class="note">⭐ 體驗：漢江吃泡麵、江邊散步看噴泉。</div>
-            <div class="btn-group">
-                <a href="https://naver.me/x7vB0nOn" class="btn btn-naver" target="_blank">漢江公園 Naver</a>
-            </div>
+<div class="day-block">
+    <div class="day-header">Day 3 | 3/26 木曜日 <span>樂天狂歡與潮流聖水</span></div>
+    
+    <div class="event-item">
+        <span class="event-name">樂天世界 (Lotte World) 🎡</span>
+        <div class="event-detail">
+            世界最大的室內室外混合遊樂園。推薦先玩戶外魔幻島區域（城堡區），再回室內滑冰場或搭乘單軌列車。
+        </div>
+    </div>
+
+    <div class="event-item">
+        <span class="event-name">聖水洞探店 (Dior / 韓貞仙 / Softbar)</span>
+        <div class="event-detail">
+            聖水洞是首爾目前的文青與時尚中心。必看景點：**Dior 聖水旗艦店** (外牆拍照熱點)；必買：**韓貞仙 (Hanjungseon) 杜拜巧克力**，這是近期全首爾最瘋搶的甜點。
+        </div>
+    </div>
+
+    <div class="event-item">
+        <span class="event-name">晚餐：ITALYGUKSI SEONGSU 🍝</span>
+        <div class="event-detail">
+            融合韓式風味的創意義大利麵店，是當地年輕人約會首選。推薦點「牛排黑芝麻義大利麵」。
         </div>
     </div>
 </div>
 
-<div class="day-card">
-    <div class="day-title"><i class="fas fa-plane-departure"></i> Day 5 | 3/28 退房歸途</div>
-    <div class="timeline">
-        <div class="event">
-            <span class="name">民宿退房 (11:00 前) ➔ 機場 (T2)</span>
-            <div class="note">⚠️ 注意：回程是 **第二航廈 (T2)**。班機 CI 0165 12:00 起飛。</div>
+<div class="day-block">
+    <div class="day-header">Day 4 | 3/27 金曜日 <span>慢活弘大與漢江野餐</span></div>
+    
+    <div class="event-item">
+        <span class="event-name">Lotteria ➔ 弘大商圈 🛍️</span>
+        <div class="event-detail">
+            早餐嘗試韓國連鎖漢堡 Lotteria (推薦韓牛堡)。隨後在弘大展開最後的大採購，這裡有許多獨立設計師品牌、3D 拍貼機以及各種潮牌店。
+        </div>
+    </div>
+
+    <div class="event-item">
+        <span class="event-name">汝矣島漢江公園 ⛲️</span>
+        <div class="event-detail">
+            體驗韓國道地的「漢江泡麵」。在便利商店購買後使用自動煮麵機，配合炸雞外送，在草地上吹風放鬆，這是首爾旅行最完美的收尾。
+        </div>
+        <div class="tips">
+            🛵 **外送：** 漢江公園有專門的「外送取餐點」，可請民宿房東協助訂炸雞。
         </div>
     </div>
 </div>
 
-<footer style="text-align:center; color:#999; padding:20px; font-size:0.8rem;">
-    &copy; 2026 Seoul Travel Guide - Have a nice trip!
+<div class="day-block">
+    <div class="day-header">Day 5 | 3/28 土曜日 <span>退房與歸途</span></div>
+    
+    <div class="event-item">
+        <span class="event-name">民宿退房 (11:00 前) ➔ 仁川機場 (T2)</span>
+        <div class="event-detail">
+            整理好行李，確認無遺漏物品。搭乘 AREX 或機場巴士前往機場。
+        </div>
+        <div class="tips">
+            <span class="important">⚠️ 航廈提醒：</span> 華航回程 CI 0165 是在 **第二航廈 (T2)** 登機。請預留充足時間辦理退稅手續。
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Powered by Gemini AI - Wish you a safe flight and happy journey! ✈️</p>
 </footer>
 
 </body>
