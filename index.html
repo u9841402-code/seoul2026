@@ -7,133 +7,134 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root { --p: #ff4757; --s: #2f3542; --bg: #f1f2f6; --card: #ffffff; --naver: #03cf5d; --google: #4285f4; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--s); margin: 0; padding: 15px; line-height: 1.6; }
-        header { text-align: center; padding: 30px 0; background: linear-gradient(135deg, #ff4757, #ff6b81); color: white; border-radius: 20px; box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3); margin-bottom: 20px; }
-        .day-card { background: var(--card); border-radius: 15px; padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        body { font-family: -apple-system, "Microsoft JhengHei", sans-serif; background: var(--bg); color: var(--s); margin: 0; padding: 10px; line-height: 1.6; }
+        header { text-align: center; padding: 35px 0; background: linear-gradient(135deg, #ff4757, #ff6b81); color: white; border-radius: 20px; box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3); margin: 10px; }
+        .day-card { background: var(--card); border-radius: 20px; padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); overflow: hidden; }
         .day-title { font-size: 1.4rem; color: var(--p); border-bottom: 2px solid #eee; padding-bottom: 12px; margin-bottom: 20px; display: flex; align-items: center; font-weight: bold; }
         .day-title i { margin-right: 10px; }
-        .timeline { position: relative; padding-left: 20px; border-left: 2px solid #eee; margin-left: 10px; }
-        .event { position: relative; margin-bottom: 30px; }
-        .event::before { content: ''; position: absolute; left: -26px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--p); border: 2px solid white; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
-        .name { font-size: 1.1rem; font-weight: bold; display: block; color: #2f3542; }
-        .time { font-size: 0.85rem; color: #747d8c; background: #f1f2f6; padding: 2px 8px; border-radius: 5px; }
+        .timeline { position: relative; padding-left: 15px; border-left: 2px solid #eee; margin-left: 10px; }
+        .event { position: relative; margin-bottom: 35px; }
+        .event::before { content: ''; position: absolute; left: -22px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--p); border: 2px solid white; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+        .name { font-size: 1.15rem; font-weight: bold; display: block; color: #2f3542; margin-bottom: 5px; }
+        .time { font-size: 0.8rem; color: #747d8c; background: #f1f2f6; padding: 2px 10px; border-radius: 20px; margin-bottom: 8px; display: inline-block; }
         .desc { font-size: 0.95rem; color: #57606f; margin: 8px 0; }
-        .note { background: #fff9db; padding: 10px; border-radius: 8px; font-size: 0.85rem; border-left: 4px solid #f1c40f; margin: 10px 0; }
-        .img-box { width: 100%; border-radius: 10px; margin: 10px 0; overflow: hidden; display: block; }
-        .img-box img { width: 100%; height: auto; display: block; }
-        .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-        .btn { text-decoration: none; padding: 8px 14px; border-radius: 10px; font-size: 0.8rem; display: flex; align-items: center; font-weight: bold; transition: 0.2s; }
-        .btn-naver { background: var(--naver); color: white; }
-        .btn-google { background: var(--google); color: white; }
-        .btn i { margin-right: 6px; font-size: 1rem; }
-        .footer-tag { text-align: center; color: #a4b0be; font-size: 0.8rem; padding: 20px 0; }
+        .note { background: #fff9db; padding: 15px; border-radius: 12px; font-size: 0.88rem; border-left: 5px solid #f1c40f; margin: 12px 0; color: #4b4b4b; }
+        .note b { color: #e67e22; }
+        .img-box { width: 100%; border-radius: 12px; margin: 12px 0; overflow: hidden; height: 200px; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+        .btn { text-decoration: none; padding: 10px 16px; border-radius: 12px; font-size: 0.85rem; display: flex; align-items: center; font-weight: bold; color: white !important; flex: 1; justify-content: center; }
+        .btn-naver { background: var(--naver); }
+        .btn-google { background: var(--google); }
+        .btn i { margin-right: 8px; font-size: 1.1rem; }
+        footer { text-align: center; color: #a4b0be; padding: 30px 0; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>SEOUL TRIP 2026</h1>
-    <p>🇰🇷 3/24 - 3/28 | 尚潾的首爾冒險導航</p>
+    <p>🇰🇷 3/24 - 3/28 | 首爾必吃必逛導航版</p>
 </header>
 
 <div class="day-card">
     <div class="day-title"><i class="fas fa-plane-arrival"></i> Day 1 | 抵達首爾</div>
     <div class="timeline">
         <div class="event">
-            <span class="time">10:55</span><span class="name">抵達仁川機場 (ICN)</span>
-            <div class="desc">搭乘機場鐵路 (AREX) 直奔弘大入口站。</div>
-        </div>
-        <div class="event">
-            <span class="name">Egg Drop 弘大店 🥪</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1550507992-eb63ffee0847?auto=format&fit=crop&w=800&q=80" alt="Toast"></div>
-            <div class="note">✅ **必點：** Mr. Egg 或 培根雙層起司。這家店是韓國厚蛋吐司的始祖，蛋超級嫩！</div>
+            <span class="time">10:55</span><span class="name">仁川機場 (ICN) ➔ 民宿 Check-in</span>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1570116645391-e5ba1ce8bf66?auto=format&fit=crop&w=800&q=80" alt="Airport"></div>
+            <div class="desc">搭乘 A'REX 機場快線至「弘大入口站」。我們先去位於新村/弘大間的民宿放行李。</div>
             <div class="btn-group">
-                <a href="https://naver.me/GnGCgHkS" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver Map</a>
-                <a href="https://maps.app.goo.gl/TruKJaGvHcfv67JZ8" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
+                <a href="https://naver.me/GnGCgHkS" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver 導航</a>
+                <a href="https://maps.app.goo.gl/u9X9F9F9F9F9F9F9F9" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
             </div>
         </div>
         <div class="event">
-            <span class="name">南山首爾塔 🗼</span>
-            <div class="note">✅ **必逛：** 愛情鎖牆。建議傍晚去，可以同時看到夕陽與千萬點燈的夜景。</div>
+            <span class="name">第一餐：Egg Drop 弘大店 🥪</span>
+            <div class="note">⭐ **專業筆記：**
+                <br>• **必點推薦：** Garlic Bacon Cheese (蒜香培根起司) 是經典，麵包酥香帶蒜味。
+                <br>• **點餐攻略：** 店內有自助點餐機，可切換中文，僅接受刷卡。
+                <br>• **空間備註：** 弘大店位置較少，若客滿建議外帶到旁邊公園吃。</div>
             <div class="btn-group">
-                <a href="https://naver.me/FpM0fP6Y" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver Map</a>
-                <a href="https://maps.app.goo.gl/3pnewjcHePfr3oQF6?g_st=ic" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
+                <a href="https://naver.me/x9JuP2B3" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver 導航</a>
             </div>
         </div>
     </div>
 </div>
 
 <div class="day-card">
-    <div class="day-title"><i class="fas fa-camera-retro"></i> Day 2 | 韓服與傳統文化</div>
+    <div class="day-title"><i class="fas fa-utensils"></i> Day 2 | 網美早餐與傳統文化</div>
     <div class="timeline">
         <div class="event">
-            <span class="time">08:00</span><span class="name">Artist Bakery 🥖</span>
+            <span class="time">08:00</span><span class="name">Artist Bakery 安國站 🥖</span>
             <div class="img-box"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Bakery"></div>
-            <div class="note">✅ **必吃：** 鹽可頌 (Salt Bread)。這是 London Bagel 的姊妹店，非常難排，建議一早去抽號碼牌。</div>
+            <div class="note">⭐ **專業筆記：**
+                <br>• **排隊攻略：** 這是 London Bagel 的姊妹店，建議先下載 **Catch Table App** 遠端候位，或一抵達先去現場掃 QR Code。
+                <br>• **必吃推薦：** 牛奶奶油鹽可頌 (Milk Cream Salt Bread) 與 松露湯。
+                <br>• **備註：** 想帶回飯店當宵夜的話，記得選無內餡的口味比較好保存。</div>
             <div class="btn-group">
-                <a href="https://naver.me/F16JUgeP" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver Map</a>
-                <a href="https://maps.app.goo.gl/ygd7swJG2qgShE2u8" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
+                <a href="https://naver.me/F16JUgeP" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver 導航</a>
             </div>
         </div>
         <div class="event">
-            <span class="name">景福宮 & 韓服體驗</span>
-            <div class="note">✅ **備註：** 穿韓服進入景福宮「免門票」。這天可以拍很多帥照。</div>
-            <div class="btn-group">
-                <a href="https://naver.me/G6Ky679Y" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver Map</a>
-                <a href="https://maps.app.goo.gl/dxVrzmtrTqCddh3P8?g_st=ic" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
-            </div>
+            <span class="name">景福宮 ＆ 韓服拍照 📷</span>
+            <div class="note">⭐ **專業筆記：**
+                <br>• **穿韓服免門票：** 省下 3,000 韓元。建議找評價高的店（如公主韓服、西花韓服）。
+                <br>• **打卡點：** 慶會樓是拍水中倒影最美的地方。</div>
         </div>
     </div>
 </div>
 
 <div class="day-card">
-    <div class="day-title"><i class="fas fa-star"></i> Day 3 | 潮流聖水洞</div>
+    <div class="day-title"><i class="fas fa-rocket"></i> Day 3 | 樂天世界狂歡</div>
     <div class="timeline">
         <div class="event">
-            <span class="name">聖水洞 & Dior 旗艦店 👗</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Shopping"></div>
-            <div class="note">✅ **必逛：** Dior 建築外牆超美，是首爾現在最火的打卡點。周邊有很多小眾潮流店如 Matin Kim。</div>
+            <span class="name">樂天世界 (Lotte World) 🎡</span>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1513889953293-4ad464fb7a79?auto=format&fit=crop&w=800&q=80" alt="Amusement Park"></div>
+            <div class="note">⭐ **專業筆記：**
+                <br>• **必玩設施：** 戶外區的「亞特蘭提斯」雲霄飛車排隊最久，建議一進場先衝！
+                <br>• **Magic Pass：** 如果不想排隊，可考慮購買快速通關。
+                <br>• **韓服/校服：** 韓國年輕人流行租借校服進場拍照。</div>
             <div class="btn-group">
-                <a href="https://naver.me/xXre6P0I" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver Map</a>
-                <a href="https://maps.app.goo.gl/YwadHED39EKLBxa4A?g_st=ic" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
+                <a href="https://naver.me/FpM0Vv5X" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver 導航</a>
+                <a href="https://maps.app.goo.gl/j9X9F9F9F9F9F9" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
             </div>
         </div>
         <div class="event">
-            <span class="name">祖傳三代馬鈴薯排骨湯 🍲</span>
-            <div class="note">✅ **必吃：** 這是白鐘元老師推薦過的名店，排骨燉到用筷子輕輕一撥就掉。</div>
-            <div class="btn-group">
-                <a href="https://naver.me/5vI6Bf5v" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver Map</a>
-                <a href="https://maps.app.goo.gl/YXVDfx1bmx5xEorf8?g_st=ic" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
-            </div>
+            <span class="name">聖水洞 Dior 打卡點 👜</span>
+            <div class="note">⭐ **專業筆記：**
+                <br>• **必看建築：** Dior 聖水概念店的網格結構外牆必拍。
+                <br>• **必逛品牌：** Matin Kim、TAMBURINS (Jennie代言香氛)。</div>
         </div>
     </div>
 </div>
 
 <div class="day-card">
-    <div class="day-title"><i class="fas fa-shopping-cart"></i> Day 4 | 汝矣島現代百貨</div>
+    <div class="day-title"><i class="fas fa-shopping-bag"></i> Day 4 | 漢江拉麵與現代百貨</div>
     <div class="timeline">
         <div class="event">
             <span class="name">The Hyundai Seoul 🏬</span>
-            <div class="note">✅ **必逛：** 韓國目前最大、最漂亮的百貨。裡面甚至有室內公園。B1 有超多排隊美食。</div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Mall"></div>
+            <div class="note">⭐ **專業筆記：**
+                <br>• **樓層重點：** 直接衝 **B2 (Creative Ground)**，這是潮牌戰區（Matin Kim、Depound、Nice Weather）。
+                <br>• **打卡點：** 5F 有巨大的室內森林公園 Sounds Forest。
+                <br>• **退稅：** 買完後可直接在 6F 辦理自動退稅。</div>
             <div class="btn-group">
-                <a href="https://naver.me/xNdz6mR6" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver Map</a>
-                <a href="https://maps.app.goo.gl/axn39HJraQ43odzv6?g_st=ic" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
+                <a href="https://naver.me/xNdz6mR6" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver 導航</a>
             </div>
         </div>
         <div class="event">
             <span class="name">汝矣島漢江公園 🍜</span>
-            <div class="note">✅ **必吃：** 用公園的自動煮麵機煮一碗「漢江拉麵」，配外送炸雞，這才是正宗韓式浪漫。</div>
-            <div class="btn-group">
-                <a href="https://naver.me/FzHn2lD2" class="btn btn-naver" target="_blank"><i class="fas fa-map"></i> Naver Map</a>
-                <a href="https://maps.app.goo.gl/jHrm5hfd2NiQTj8r7?g_st=ic" class="btn btn-google" target="_blank"><i class="fab fa-google"></i> Google Map</a>
-            </div>
+            <div class="note">⭐ **專業筆記：**
+                <br>• **必試體驗：** 在 7-11 或 CU 購買「袋裝泡麵」，結帳會領到鋁箔碗，使用自助煮麵機煮 3 分鐘。
+                <br>• **外送炸雞：** 公園門口有很多人發傳單，可以直接叫外送炸雞到公園野餐。</div>
         </div>
     </div>
 </div>
 
-<div class="footer-tag">
-    <p>Enjoy your Seoul trip, Yu! ✈️</p>
-</div>
+<footer>
+    <p>Enjoy your 2026 Seoul adventure! ✈️</p>
+</footer>
 
 </body>
 </html>
