@@ -3,245 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seoul 2026 | 數位導航手冊</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>🇰🇷 2026 首爾行程導航</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1a1a1a;
-            --accent: #eb4d4b;
-            --bg: #f4f7f6;
-            --card: #ffffff;
-            --naver: #03cf5d;
-            --google: #4285f4;
-            --text-main: #2d3436;
-            --text-sub: #636e72;
-        }
-
-        body {
-            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            margin: 0; padding: 0;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d3436 100%);
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        header h1 { margin: 0; font-size: 1.6rem; font-weight: 600; letter-spacing: 3px; }
-        header p { margin: 10px 0 0; opacity: 0.7; font-size: 0.85rem; }
-
-        .sticky-info {
-            max-width: 500px;
-            margin: -30px auto 30px;
-            padding: 0 15px;
-        }
-
-        .info-card {
-            background: var(--card);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-left: 5px solid var(--accent);
-        }
-
-        .container { max-width: 500px; margin: 0 auto; padding: 0 15px 100px; }
-        
-        .day-label {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin: 40px 0 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .day-label::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #ddd;
-            margin-left: 15px;
-        }
-
-        .event-card {
-            background: var(--card);
-            border-radius: 18px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-
-        .type-tag {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: var(--accent);
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .event-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--primary);
-        }
-
-        .event-info {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            margin-bottom: 15px;
-        }
-
-        /* 導航按鈕樣式 */
-        .nav-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .nav-btn {
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: 0.2s;
-        }
-
-        .btn-naver { background: var(--naver); color: white; }
-        .btn-google { background: #f1f3f4; color: #5f6368; border: 1px solid #dadce0; }
-        .nav-btn:active { transform: scale(0.96); }
-
-        .airport-card {
-            background: #ebf5ff;
-            border: 1px solid #cce5ff;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: #fff;
-            color: #ccc;
-            font-size: 0.75rem;
-        }
+        :root { --p: #ff4757; --s: #2f3542; --bg: #f1f2f6; --card: #ffffff; --naver: #03cf5d; --house: #ff385c; --air: #004797; }
+        body { font-family: -apple-system, "Microsoft JhengHei", sans-serif; background: var(--bg); margin: 0; padding: 10px; color: var(--s); line-height: 1.5; }
+        header { text-align: center; padding: 25px; background: linear-gradient(135deg, #ff4757, #ff6b81); color: white; border-radius: 15px; margin-bottom: 15px; }
+        .info-card { background: white; padding: 15px; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 0.9rem; }
+        .info-title { font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; }
+        .info-title i { margin-right: 8px; }
+        .day-card { background: white; border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .day-num { color: var(--p); font-size: 1.25rem; font-weight: bold; border-bottom: 2px solid #f1f2f6; padding-bottom: 10px; margin-bottom: 15px; display: block; }
+        .spot { margin-bottom: 20px; }
+        .spot-name { font-weight: bold; font-size: 1.05rem; display: block; margin-bottom: 5px; }
+        .btn-naver { display: inline-flex; align-items: center; justify-content: center; background: var(--naver); color: white !important; text-decoration: none; padding: 10px 15px; border-radius: 10px; font-size: 0.85rem; font-weight: bold; width: 100%; margin-top: 5px; box-sizing: border-box; }
+        .btn-naver i { margin-right: 6px; }
+        .note { background: #fff9db; padding: 10px; border-radius: 8px; font-size: 0.85rem; margin-top: 8px; border-left: 4px solid #f1c40f; color: #444; }
+        footer { text-align: center; padding: 20px; color: #aaa; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>SEOUL DISCOVERY</h1>
-    <p>MAR 24 — MAR 28, 2026</p>
+    <h1>SEOUL 2026</h1>
+    <p>3/24 - 3/28 首爾之旅導航</p>
 </header>
 
-<div class="sticky-info">
-    <div class="info-card">
-        <div style="margin-bottom:10px;"><b>🏨 民宿地址 (弘大/新村)</b><br><span style="font-size:0.9rem; color:#636e72;">서울특별시 서대문구 창천동 100-86</span></div>
-        <div class="nav-grid">
-            <a href="https://naver.me/I5c6mQ4w" class="nav-btn btn-naver"><i class="fas fa-map-marker-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=37.5574,126.9328" class="nav-btn btn-google"><i class="fab fa-google"></i> Google</a>
-        </div>
+<div class="info-card" style="border-left: 5px solid var(--house);">
+    <div class="info-title" style="color: var(--house);"><i class="fas fa-home"></i> 住宿 (新村/弘大間)</div>
+    📍 地址：<b>서울 서대문구 창천동 100-86</b><br>
+    🔑 確認碼：<b>HMWBTC5MQT</b><br>
+    🏠 房東：Jhdm (2人)
+    <a href="https://naver.me/xqfN6H3G" class="btn-naver" target="_blank"><i class="fas fa-location-arrow"></i> 導航至民宿 (Naver Map)</a>
+</div>
+
+<div class="info-card" style="border-left: 5px solid var(--air);">
+    <div class="info-title" style="color: var(--air);"><i class="fas fa-plane"></i> 航班資訊 (China Airlines)</div>
+    ✈️ 去程 CI 0164：07:05 ➔ 10:55 (T2)<br>
+    ✈️ 回程 CI 0165：12:00 ➔ 14:15 (T2)<br>
+    🎫 訂位代號：<b>FNNDVY</b>
+</div>
+
+<div class="day-card">
+    <span class="day-num">Day 1 | 3/24 (二)</span>
+    <div class="spot">
+        <span class="spot-name">Egg Drop 弘大店 🥪</span>
+        <a href="https://naver.me/x9JuP2B3" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航</a>
+    </div>
+    <div class="spot">
+        <span class="spot-name">南山首爾塔 🗼</span>
+        <a href="https://naver.me/G8tWn4YJ" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航</a>
+        <div class="note">記得先去取票處，傍晚看夕陽風景最好。</div>
     </div>
 </div>
 
-<div class="container">
-
-    <div class="day-label">DAY 01 <span style="font-weight:400; font-size:0.9rem; margin-left:10px;">3/24 TUE</span></div>
-    
-    <div class="event-card">
-        <span class="type-tag">Food</span>
-        <div class="event-title">Egg Drop 弘大店</div>
-        <div class="event-info">經典厚切歐姆蛋吐司，位於弘大商圈核心。</div>
-        <div class="nav-grid">
-            <a href="https://naver.me/F9QzL0jX" class="nav-btn btn-naver">Naver 導航</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Egg+Drop+Hongdae" class="nav-btn btn-google">Google Map</a>
-        </div>
+<div class="day-card">
+    <span class="day-num">Day 2 | 3/25 (三)</span>
+    <div class="spot">
+        <span class="spot-name">Artist Bakery 安國站 🥖</span>
+        <a href="https://naver.me/F16JUgeP" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航</a>
     </div>
-
-    <div class="event-card">
-        <span class="type-tag">Scenery</span>
-        <div class="event-title">南山纜車 (首爾塔)</div>
-        <div class="event-info">搭乘纜車直達山頂，欣賞首爾全景夜景。</div>
-        <div class="nav-grid">
-            <a href="https://naver.me/G8tWn4YJ" class="nav-btn btn-naver">Naver 導航</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Namsan+Cable+Car" class="nav-btn btn-google">Google Map</a>
-        </div>
+    <div class="spot">
+        <span class="spot-name">景福宮 🎎</span>
+        <a href="https://naver.me/5vYV9zUv" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航</a>
     </div>
-
-    <div class="day-label">DAY 02 <span style="font-weight:400; font-size:0.9rem; margin-left:10px;">3/25 WED</span></div>
-
-    <div class="event-card">
-        <span class="type-tag">Bakery</span>
-        <div class="event-title">Artist Bakery (安國)</div>
-        <div class="event-info">IG 熱門鹽可頌專賣店，就在安國站出口旁。</div>
-        <div class="nav-grid">
-            <a href="https://naver.me/F16JUgeP" class="nav-btn btn-naver">Naver 導航</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Artist+Bakery+Anguk" class="nav-btn btn-google">Google Map</a>
-        </div>
+    <div class="spot">
+        <span class="spot-name">明洞夜市 🛍️</span>
+        <a href="https://naver.me/x0aE9U5h" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航</a>
+        <div class="note">找龍鬚糖小哥表演，Olive Young 就在旁邊。</div>
     </div>
+</div>
 
-    <div class="event-card">
-        <span class="type-tag">Shopping</span>
-        <div class="event-title">明洞夜市 & Olive Young</div>
-        <div class="event-info">逛街聖地，旗艦店 Olive Young 在此。</div>
-        <div class="nav-grid">
-            <a href="https://naver.me/x0aE9U5h" class="nav-btn btn-naver">Naver 導航</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Myeongdong+Night+Market" class="nav-btn btn-google">Google Map</a>
-        </div>
+<div class="day-card">
+    <span class="day-num">Day 3 | 3/26 (四)</span>
+    <div class="spot">
+        <span class="spot-name">樂天世界 🎡</span>
+        <a href="https://naver.me/FpM0Vv5X" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航</a>
     </div>
-
-    <div class="day-label">DAY 03 <span style="font-weight:400; font-size:0.9rem; margin-left:10px;">3/26 THU</span></div>
-
-    <div class="event-card">
-        <span class="type-tag">Attraction</span>
-        <div class="event-title">樂天世界 Lotte World</div>
-        <div class="event-info">蠶室站直達，包含室內與室外園區。</div>
-        <div class="nav-grid">
-            <a href="https://naver.me/FpM0Vv5X" class="nav-btn btn-naver">Naver 導航</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Lotte+World+Seoul" class="nav-btn btn-google">Google Map</a>
-        </div>
+    <div class="spot">
+        <span class="spot-name">Dior 聖水旗艦店 👗</span>
+        <a href="https://naver.me/F0w2O4Oq" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航</a>
     </div>
-
-    <div class="event-card">
-        <span class="type-tag">Luxury</span>
-        <div class="event-title">聖水洞 Dior 旗艦店</div>
-        <div class="event-info">絕美外牆拍照點，附近還有「韓貞仙」巧克力。</div>
-        <div class="nav-grid">
-            <a href="https://naver.me/F0w2O4Oq" class="nav-btn btn-naver">Naver 導航</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Dior+Seongsu" class="nav-btn btn-google">Google Map</a>
-        </div>
+    <div class="spot">
+        <span class="spot-name">韓貞仙 (杜拜巧克力) 🍫</span>
+        <a href="https://naver.me/xqfN6H3G" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航 (聖水店)</a>
     </div>
+</div>
 
-    <div class="day-label">DAY 05 <span style="font-weight:400; font-size:0.9rem; margin-left:10px;">3/28 SAT</span></div>
-
-    <div class="event-card airport-card">
-        <span class="type-tag" style="color:#007bff;">Departure</span>
-        <div class="event-title">回程：仁川機場 第二航廈 (T2)</div>
-        <div class="event-info">
-            <b>航班：華航 CI 0165 (12:00 起飛)</b><br>
-            請注意華航是在 T2 航廈，不要走錯到 T1。
-        </div>
-        <div class="nav-grid">
-            <a href="https://naver.me/G7K6mI4Z" class="nav-btn btn-naver">T2 Naver 導航</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Incheon+Airport+Terminal+2" class="nav-btn btn-google">T2 Google Map</a>
-        </div>
+<div class="day-card">
+    <span class="day-num">Day 4 | 3/27 (五)</span>
+    <div class="spot">
+        <span class="spot-name">弘大商圈 🛍️</span>
+        <a href="https://naver.me/x0aE9U5h" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航</a>
     </div>
+    <div class="spot">
+        <span class="spot-name">汝矣島漢江公園 ⛲️</span>
+        <a href="https://naver.me/x7vB0nOn" class="btn-naver" target="_blank"><i class="fas fa-map-marked-alt"></i> 導航</a>
+    </div>
+</div>
 
+<div class="day-card">
+    <span class="day-num">Day 5 | 3/28 (六)</span>
+    <div class="spot">
+        <span class="spot-name">仁川機場第二航廈 (T2) ✈️</span>
+        <div class="note">⚠️ 回程一樣在 **T2** 辦理登機。預計 12:00 起飛。</div>
+    </div>
 </div>
 
 <footer>
-    <p>WISH YOU A SAFE FLIGHT BACK HOME</p>
-    <p>© 2026 TRAVEL GUIDE BY GEMINI</p>
+    &copy; 2026 Seoul Travel Guide<br>祝旅途愉快！
 </footer>
 
 </body>
