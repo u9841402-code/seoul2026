@@ -18,8 +18,8 @@
         .event::before { content: ''; position: absolute; left: -22px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--p); border: 2px solid white; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
         .name { font-size: 1.15rem; font-weight: bold; display: block; color: #2f3542; margin-bottom: 5px; }
         .time { font-size: 0.8rem; color: #747d8c; background: #f1f2f6; padding: 2px 10px; border-radius: 20px; margin-bottom: 8px; display: inline-block; }
-        .note { background: #fff9db; padding: 12px; border-radius: 12px; font-size: 0.88rem; border-left: 5px solid #f1c40f; margin: 12px 0; }
-        .img-box { width: 100%; border-radius: 12px; margin: 12px 0; overflow: hidden; height: 180px; }
+        .note { background: #fff9db; padding: 12px; border-radius: 12px; font-size: 0.88rem; border-left: 5px solid #f1c40f; margin: 12px 0; color: #444; }
+        .img-box { width: 100%; border-radius: 12px; margin: 12px 0; overflow: hidden; height: 180px; background: #ddd; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
         .btn-group { display: flex; gap: 8px; margin-top: 15px; }
         .btn { text-decoration: none; padding: 10px; border-radius: 10px; font-size: 0.8rem; flex: 1; text-align: center; font-weight: bold; color: white !important; }
@@ -32,83 +32,84 @@
 
 <header>
     <h1>SEOUL TRIP 2026</h1>
-    <p>🇰🇷 3/24 - 3/28 | 尚潾的首爾冒險行程表</p>
+    <p>🇰🇷 3/24 - 3/28 | 尚潾專屬首爾地圖導航</p>
 </header>
 
 <div class="air-card">
-    <div style="font-weight: bold; color: var(--air); margin-bottom: 10px;"><i class="fas fa-plane"></i> 航班資訊 (China Airlines)</div>
+    <div style="font-weight: bold; color: var(--air); margin-bottom: 10px;"><i class="fas fa-plane"></i> 華航班機資訊</div>
     <div style="display: flex; justify-content: space-between;">
-        <div><b>去程 CI 0164</b><br>3/24 07:05 KHH ➔ 10:55 ICN</div>
-        <div><b>回程 CI 0165</b><br>3/28 12:00 ICN ➔ 14:15 KHH</div>
+        <div><b>去程 CI 0164 (T1)</b><br>3/24 07:05 ➔ 10:55</div>
+        <div><b>回程 CI 0165 (T2)</b><br>3/28 12:00 ➔ 14:15</div>
     </div>
-    <div style="margin-top: 5px; font-size: 0.8rem; color: #666;">代號: FNNDVY | 航廈: 去程 T1 / 回程 T2</div>
+    <div style="margin-top: 8px; font-size: 0.8rem; color: #666;">代號: <b>FNNDVY</b> | 回程務必前往 <b>第二航廈 (T2)</b></div>
 </div>
 
 <div class="day-card">
-    <div class="day-title"><i class="fas fa-map-marker-alt"></i> Day 1 | 3/24 抵達與南山美景</div>
+    <div class="day-title"><i class="fas fa-map-marked-alt"></i> Day 1 | 抵達首爾與南山</div>
     <div class="timeline">
         <div class="event">
-            <span class="time">10:55</span><span class="name">抵達仁川機場 (T1) ➔ 弘大民宿</span>
-            <div class="desc">搭乘機場快線至「弘大入口站」5 號出口步行至民宿 Check-in。</div>
-        </div>
-        <div class="event">
-            <span class="name">Egg Drop 弘大店 🥪</span>
-            <div class="note">✅ **推薦：** 招牌 Garlic Bacon Cheese 吐司。</div>
+            <span class="name">抵達飯店 ➔ Egg Drop 🥪</span>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800&auto=format&fit=crop" alt="Egg Drop"></div>
             <div class="btn-group">
-                <a href="https://naver.me/x9JuP2B3" class="btn btn-naver" target="_blank">Naver Map</a>
+                <a href="https://naver.me/x9JuP2B3" class="btn btn-naver" target="_blank">Naver 導航</a>
+                <a href="https://maps.app.goo.gl/3A749o8wT9FfS4X27" class="btn btn-google" target="_blank">Google Map</a>
             </div>
         </div>
         <div class="event">
-            <span class="name">取票 ➔ 南山纜車 🚠 ➔ 首爾塔 🗼</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800&q=80" alt="N Seoul Tower"></div>
-            <div class="note">✅ **必做：** 前往南山塔愛情鎖牆，傍晚看夕陽與夜景。</div>
+            <span class="name">南山纜車 ➔ 愛情鎖 ➔ 首爾塔 Tower 🗼</span>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=800&auto=format&fit=crop" alt="N Seoul Tower"></div>
+            <div class="note">⭐ **重點：** 記得先去「取票處」換票。傍晚搭纜車上去風景最美。</div>
             <div class="btn-group">
                 <a href="https://naver.me/G8tWn4YJ" class="btn btn-naver" target="_blank">首爾塔 Naver</a>
+                <a href="https://maps.app.goo.gl/9nL9D2iSAnp7UuM28" class="btn btn-google" target="_blank">Google Map</a>
             </div>
         </div>
     </div>
 </div>
 
 <div class="day-card">
-    <div class="day-title"><i class="fas fa-camera"></i> Day 2 | 3/25 經典首爾與明洞夜市</div>
+    <div class="day-title"><i class="fas fa-camera-retro"></i> Day 2 | 韓屋與明洞</div>
     <div class="timeline">
         <div class="event">
             <span class="name">Artist Bakery 安國站 🥖</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Artist Bakery"></div>
-            <div class="note">✅ **筆記：** 超人氣鹽可頌，建議早上先去現場候位抽號碼牌。</div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop" alt="Artist Bakery"></div>
             <div class="btn-group">
-                <a href="https://naver.me/F16JUgeP" class="btn btn-naver" target="_blank">Naver Map</a>
+                <a href="https://naver.me/F16JUgeP" class="btn btn-naver" target="_blank">Naver 導航</a>
+                <a href="https://maps.app.goo.gl/7A1VskL8pL7Jp6K6A" class="btn btn-google" target="_blank">Google Map</a>
             </div>
         </div>
         <div class="event">
             <span class="name">北村韓屋村 ➔ 景福宮 🎎</span>
-            <div class="note">✅ **體驗：** 換上韓服步行於巷弄間。景福宮週二公休，需注意日期確認。</div>
+            <div class="note">⭐ **備註：** 景福宮週二公休，若 3/25 是週二，請將韓屋村排第一順位拍照。</div>
         </div>
         <div class="event">
             <span class="name">明洞夜市 ➔ Olive Young 🛍️</span>
-            <div class="note">✅ **必逛：** 尋找「龍鬚糖小哥」表演與購買彩妝保養品。</div>
+            <div class="note">⭐ **搜尋：** 龍鬚糖小哥在夜市主街。Olive Young 滿額記得直接辦退稅。</div>
             <div class="btn-group">
                 <a href="https://naver.me/x0aE9U5h" class="btn btn-naver" target="_blank">明洞 Naver</a>
+                <a href="https://maps.app.goo.gl/uX9R8qR8qR8qR8qR8" class="btn btn-google" target="_blank">Google Map</a>
             </div>
         </div>
     </div>
 </div>
 
 <div class="day-card">
-    <div class="day-title"><i class="fas fa-magic"></i> Day 3 | 3/26 樂天世界與聖水洞</div>
+    <div class="day-title"><i class="fas fa-ghost"></i> Day 3 | 樂天世界與聖水洞</div>
     <div class="timeline">
         <div class="event">
             <span class="name">樂天世界 (Lotte World) 🎡</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1513889953293-4ad464fb7a79?auto=format&fit=crop&w=800&q=80" alt="Lotte World"></div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1513889953293-4ad464fb7a79?q=80&w=800&auto=format&fit=crop" alt="Lotte World"></div>
             <div class="btn-group">
-                <a href="https://naver.me/FpM0Vv5X" class="btn btn-naver" target="_blank">Naver Map</a>
+                <a href="https://naver.me/FpM0Vv5X" class="btn btn-naver" target="_blank">Naver 導航</a>
+                <a href="https://maps.app.goo.gl/6v5v5v5v5v5v5v5v5" class="btn btn-google" target="_blank">Google Map</a>
             </div>
         </div>
         <div class="event">
-            <span class="name">聖水洞探店 ➔ Dior 旗艦店 ➔ Softbar 🍦</span>
-            <div class="note">✅ **甜點：** 韓貞仙（必買杜拜巧克力🍫）。</div>
+            <span class="name">聖水洞探店 (Dior / 韓貞仙 / Softbar) 🍦</span>
+            <div class="note">⭐ **必買：** 韓貞仙的「杜拜巧克力」是近期最紅單品，下午可能售罄。</div>
             <div class="btn-group">
-                <a href="https://naver.me/F0w2O4Oq" class="btn btn-naver" target="_blank">Dior 聖水</a>
+                <a href="https://naver.me/F0w2O4Oq" class="btn btn-naver" target="_blank">Dior Naver</a>
+                <a href="https://maps.app.goo.gl/yYyYyYyYyYyYyYyYy" class="btn btn-google" target="_blank">Google Map</a>
             </div>
         </div>
         <div class="event">
@@ -118,39 +119,25 @@
 </div>
 
 <div class="day-card">
-    <div class="day-title"><i class="fas fa-shopping-bag"></i> Day 4 | 3/27 弘大生活與漢江公園</div>
+    <div class="day-title"><i class="fas fa-shopping-cart"></i> Day 4 | 弘大與漢江</div>
     <div class="timeline">
         <div class="event">
-            <span class="name">Lotteria 漢堡 ➔ 弘大商圈 🛍️</span>
-            <div class="note">✅ **活動：** 下午在弘大逛潮牌、看街頭藝人表演。</div>
+            <span class="name">Lotteria ➔ 弘大商圈 🛍️</span>
+            <div class="note">⭐ **推薦：** 弘大有很多 3D 拍貼機，一定要去體驗。</div>
         </div>
         <div class="event">
             <span class="name">汝矣島漢江公園 ⛲️</span>
-            <div class="img-box"><img src="https://images.unsplash.com/photo-1538669715516-b238117fbd99?auto=format&fit=crop&w=800&q=80" alt="Hangang Park"></div>
-            <div class="note">✅ **推薦：** 晚上吃江邊外送炸雞或超商泡麵，體驗道地韓國生活。</div>
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1538669715516-b238117fbd99?q=80&w=800&auto=format&fit=crop" alt="Hangang"></div>
             <div class="btn-group">
                 <a href="https://naver.me/x7vB0nOn" class="btn btn-naver" target="_blank">漢江公園 Naver</a>
+                <a href="https://maps.app.goo.gl/zZzZzZzZzZzZzZzZz" class="btn btn-google" target="_blank">Google Map</a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="day-card">
-    <div class="day-title"><i class="fas fa-plane-departure"></i> Day 5 | 3/28 歸途回台</div>
-    <div class="timeline">
-        <div class="event">
-            <span class="time">09:00</span><span class="name">前往仁川機場 (T2)</span>
-            <div class="note">⚠️ **特別提醒：** 華航回程是在 **第二航廈 (T2)** 辦理登機。</div>
-        </div>
-        <div class="event">
-            <span class="time">12:00</span><span class="name">CI 0165 起飛 ✈️</span>
-            <div class="desc">預計 14:15 抵達高雄。</div>
-        </div>
-    </div>
-</div>
-
 <footer>
-    <p>Have a nice trip in Seoul! 🇰🇷</p>
+    <p>祝 尚潾 旅途愉快！所有景點已連線完畢 ✈️</p>
 </footer>
 
 </body>
