@@ -1,165 +1,261 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🇰🇷 2026 SEOUL TRAVEL GUIDE</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root { --p: #ff4757; --s: #2f3542; --bg: #f1f2f6; --naver: #03cf5d; --google: #4285f4; --house: #ff385c; --air: #004797; }
-        body { font-family: -apple-system, "Microsoft JhengHei", sans-serif; background: var(--bg); margin: 0; padding: 10px; color: var(--s); line-height: 1.6; }
-        header { text-align: center; padding: 30px 10px; background: linear-gradient(135deg, #ff4757, #ff6b81); color: white; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3); }
-        .section-title { font-size: 1.2rem; font-weight: bold; margin: 20px 10px 10px; display: flex; align-items: center; }
-        .section-title i { margin-right: 8px; color: var(--p); }
-        .info-card { background: white; padding: 18px; border-radius: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin: 0 5px 15px; position: relative; }
-        .info-card.air { border-left: 6px solid var(--air); }
-        .info-card.house { border-left: 6px solid var(--house); }
-        .info-card p { margin: 5px 0; font-size: 0.9rem; }
-        .tag { background: #f1f2f6; padding: 2px 8px; border-radius: 6px; font-weight: bold; font-size: 0.85rem; }
-        .day-container { background: white; border-radius: 25px; padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .day-header { font-size: 1.5rem; font-weight: 800; color: var(--p); border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
-        .spot { margin-bottom: 30px; padding-left: 10px; border-left: 3px solid #eee; }
-        .spot-name { font-size: 1.15rem; font-weight: bold; display: block; margin-bottom: 5px; }
-        .note { background: #fff9db; padding: 12px; border-radius: 12px; font-size: 0.85rem; margin: 10px 0; border-left: 5px solid #f1c40f; color: #444; }
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
-        .btn { text-decoration: none; padding: 12px 5px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; text-align: center; color: white !important; display: flex; align-items: center; justify-content: center; }
-        .btn-n { background: var(--naver); }
-        .btn-g { background: var(--google); }
-        .btn i { margin-right: 5px; font-size: 1rem; }
-        footer { text-align: center; padding: 30px; color: #a4b0be; font-size: 0.8rem; border-top: 1px solid #eee; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>香港 36 小時快閃行程</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #faf8f4;
+    --accent: #c0392b;
+    --gold: #b8860b;
+    --muted: #6b6460;
+    --border: #e0dbd4;
+    --day1: #c0392b;
+    --day2: #2c6e8a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: #faf8f4;
+    padding: 3rem 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
+  .hero-tag { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-weight: 500; }
+  .hero-title { font-family: 'Noto Serif TC', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; line-height: 1.2; margin-bottom: 0.5rem; }
+  .hero-title span { color: var(--accent); }
+  .hero-sub { font-size: 14px; color: rgba(250,248,244,0.6); font-weight: 300; letter-spacing: 0.05em; }
+  .hero-meta { display: flex; gap: 2rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid rgba(255,255,255,0.15); }
+  .meta-item { }
+  .meta-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(250,248,244,0.4); margin-bottom: 4px; }
+  .meta-val { font-size: 14px; color: rgba(250,248,244,0.85); font-weight: 400; }
+
+  /* MAIN */
+  .main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+
+  /* DAY TABS */
+  .day-tabs { display: flex; gap: 0; margin-bottom: 2rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .day-tab {
+    flex: 1; padding: 12px 16px; font-size: 13px; font-weight: 500;
+    background: #fff; border: none; cursor: pointer;
+    color: var(--muted); transition: all 0.2s; font-family: 'Noto Sans TC', sans-serif;
+    border-right: 1px solid var(--border);
+  }
+  .day-tab:last-child { border-right: none; }
+  .day-tab.active { background: var(--ink); color: #faf8f4; }
+  .day-tab .tab-date { font-size: 11px; opacity: 0.7; display: block; margin-top: 2px; font-weight: 300; }
+
+  /* LAYOUT */
+  .layout { display: grid; grid-template-columns: 280px 1fr; gap: 1.25rem; }
+  @media (max-width: 680px) { .layout { grid-template-columns: 1fr; } }
+
+  /* STOP LIST */
+  .stop-list { display: flex; flex-direction: column; gap: 6px; }
+  .stop-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 12px 14px; cursor: pointer; transition: all 0.15s;
+    border-left: 3px solid transparent;
+  }
+  .stop-card:hover { border-color: var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .stop-card.active { border-left-color: var(--accent); background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .stop-row { display: flex; gap: 10px; align-items: flex-start; }
+  .stop-num {
+    width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 500; margin-top: 1px;
+  }
+  .stop-time { font-size: 11px; color: var(--muted); margin-bottom: 3px; letter-spacing: 0.05em; }
+  .stop-name { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.4; }
+  .stop-note {
+    font-size: 11.5px; color: var(--muted); margin-top: 7px; line-height: 1.6;
+    padding-top: 7px; border-top: 1px solid var(--border);
+    display: none;
+  }
+  .stop-card.active .stop-note { display: block; }
+
+  /* MAP */
+  .map-wrap { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: #eee; position: relative; }
+  .map-wrap iframe { width: 100%; height: 420px; border: none; display: block; }
+  @media (max-width: 680px) { .map-wrap iframe { height: 300px; } }
+  .map-footer {
+    background: #fff; padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px;
+  }
+  .map-footer-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .map-footer-time { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .map-open-btn {
+    font-size: 12px; padding: 6px 14px; border-radius: 6px;
+    background: var(--ink); color: #faf8f4; border: none; cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif; white-space: nowrap;
+    font-weight: 400; transition: opacity 0.15s; flex-shrink: 0;
+  }
+  .map-open-btn:hover { opacity: 0.8; }
+
+  /* TIP */
+  .tip { margin-top: 1.25rem; padding: 12px 16px; background: #fff7ed; border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; font-size: 12.5px; color: #5c4a1e; line-height: 1.7; }
+  .tip strong { font-weight: 500; }
+
+  /* FUNPASS */
+  .funpass { margin-top: 1.5rem; background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; }
+  .funpass h3 { font-size: 14px; font-weight: 500; margin-bottom: 8px; color: var(--ink); }
+  .funpass p { font-size: 12.5px; color: var(--muted); line-height: 1.7; }
+  .funpass-badge { display: inline-block; font-size: 11px; padding: 3px 10px; background: #fef3c7; color: #92400e; border-radius: 99px; font-weight: 500; margin-bottom: 8px; }
+
+  /* FOOTER */
+  .footer { text-align: center; padding: 2rem; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 2rem; letter-spacing: 0.05em; }
+</style>
 </head>
 <body>
 
-<header>
-    <h1>KOREA TRIP 2026</h1>
-    <p>3/24 - 3/28 尚潾的首爾五日冒險</p>
-</header>
-
-<div class="section-title"><i class="fas fa-paper-plane"></i> 核心資訊 (機票與住宿)</div>
-<div class="info-card air">
-    <p><b>✈️ 高雄 ➔ 仁川 (CI 0164)</b><br>3/24 <span class="tag">07:05 ➔ 10:55</span> | 抵達 <b>T2 航廈</b></p>
-    <p><b>✈️ 仁川 ➔ 高雄 (CI 0165)</b><br>3/28 <span class="tag">12:00 ➔ 14:15</span> | 回程 <b>T2 航廈</b></p>
-    <p><b>🎫 訂位代號：</b><span class="tag">FNNDVY</span></p>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">情侶快閃行程</div>
+    <h1 class="hero-title">香港 <span>36</span> 小時</h1>
+    <p class="hero-sub">高雄出發 · 兩天一夜 · 2026 年 4 月</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-label">去程</div>
+        <div class="meta-val">AE 0983 · 07:35 KHH → 09:10 HKG</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">回程</div>
+        <div class="meta-val">CI 0936 · 20:40 HKG → 22:10 KHH</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">住宿</div>
+        <div class="meta-val">仕德福酒店 · 銅鑼灣</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="info-card house">
-    <p><b>🏠 弘大/新村 民宿 (Airbnb)</b><br>地址：서울 서대문구 창천동 100-86</p>
-    <p><b>🔑 確認碼：</b><span class="tag">HMWBTC5MQT</span> | 房東：Jhdm</p>
-    <p><b>⏰ 時間：</b>15:00 入住 / 11:00 退房</p>
-    <div class="btn-group">
-        <a href="https://map.naver.com/v5/search/창천동100-86" class="btn btn-n" target="_blank"><i class="fas fa-location-arrow"></i> Naver Map</a>
-        <a href="https://www.google.com/maps/search/Changcheon-dong+100-86" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google Map</a>
+<div class="main">
+  <div class="day-tabs">
+    <button class="day-tab active" onclick="switchDay(0)">
+      第一天 — 港島精華
+      <span class="tab-date">4/16（四）· 到港後出發</span>
+    </button>
+    <button class="day-tab" onclick="switchDay(1)">
+      第二天 — 文青收尾
+      <span class="tab-date">4/17（五）· 晚上返台</span>
+    </button>
+  </div>
+
+  <div class="layout">
+    <div class="stop-list" id="stop-list"></div>
+    <div>
+      <div class="map-wrap">
+        <iframe id="map-frame" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-footer">
+          <div>
+            <div class="map-footer-name" id="mf-name">—</div>
+            <div class="map-footer-time" id="mf-time">點選左方景點查看地圖</div>
+          </div>
+          <button class="map-open-btn" onclick="openGmap()">Google 地圖開啟 ↗</button>
+        </div>
+      </div>
+      <div class="tip" id="tip-box"></div>
     </div>
+  </div>
+
+  <div class="funpass">
+    <span class="funpass-badge">省錢推薦</span>
+    <h3>香港 FunPASS 豪三合一版</h3>
+    <p>涵蓋機場快線、山頂纜車、張保仔號（Aqualuna）、M+ 博物館等 30 個景點，可節省約 <strong>56%</strong> 費用，並免排隊購票。建議出發前在 KKday 或 Klook 購買。</p>
+  </div>
 </div>
 
-<div class="day-container">
-    <div class="day-header">DAY 1 | 3月24日</div>
-    <div class="spot">
-        <span class="spot-name">Egg Drop 弘大店 🥪</span>
-        <div class="note">招牌厚蛋吐司，入住後第一餐首選。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.com/v5/search/Egg+Drop+Hongdae" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/Egg+Drop+Hongdae" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
-        </div>
-    </div>
-    <div class="spot">
-        <span class="spot-name">南山纜車 / 首爾塔 🗼</span>
-        <div class="note">🎫 **重要：** 抵達後先去「取票處」換票。含愛情鎖牆 ❤️🔒。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.com/v5/search/N+Seoul+Tower" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/N+Seoul+Tower" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
-        </div>
-    </div>
-</div>
+<div class="footer">製作於 Claude · 高雄 → 香港 2026.04</div>
 
-<div class="day-container">
-    <div class="day-header">DAY 2 | 3月25日</div>
-    <div class="spot">
-        <span class="spot-name">Artist Bakery 安國站 🥖</span>
-        <div class="note">倫敦貝果博物館團隊新作，鹽可頌必吃。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.com/v5/search/Artist+Bakery+Anguk" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/Artist+Bakery+Anguk" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
-        </div>
-    </div>
-    <div class="spot">
-        <span class="spot-name">北村韓屋村 ➔ 景福宮 🎎</span>
-        <div class="note">穿韓服入宮免門票，適合拍情侶照。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.com/v5/search/Gyeongbokgung+Palace" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/Gyeongbokgung+Palace" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
-        </div>
-    </div>
-    <div class="spot">
-        <span class="spot-name">明洞夜市 / Olive Young 🛍️</span>
-        <div class="note">🍭 **必找：** 會說多國語言的「龍鬚糖小哥」表演。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.me/v5/search/Myeongdong+Night+Market" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/Myeongdong+Night+Market" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
-        </div>
-    </div>
-</div>
+<script>
+const days = [
+  {
+    tip: '<strong>今日提醒：</strong>張保仔號（Aqualuna）19:30 場超搶手，務必提前在 KKday / Klook 預約！太平山纜車建議 17:40 前抵達，捕捉日落＋夜景。',
+    stops: [
+      { time: '09:10', name: '仕德福酒店 Check-in', note: '搭機場快線到香港站（約 24 分），再轉地鐵到銅鑼灣。房間未 ready 先放行李出發。', lat: 22.2819, lng: 114.1889, color: '#534AB7', q: '22.2819,114.1889' },
+      { time: '11:00', name: '西港城', note: '1906 年英式紅磚建築，非常適合拍照。重點是拍叮叮車從轉角駛過的瞬間！', lat: 22.2873, lng: 114.1504, color: '#0F6E56', q: '22.2873,114.1504' },
+      { time: '11:30', name: '叮叮車全景遊', note: '坐二樓半開放式座位！附 8 國語言導覽、明信片、叮叮糖。黃金套票可兩天不限次搭普通叮叮車。', lat: 22.285, lng: 114.155, color: '#0F6E56', q: '22.285,114.155' },
+      { time: '13:00', name: '銅鑼灣午餐', note: '以飯店周邊為主，避免耗時排隊。SOGO 百貨或時代廣場周邊任選，輕鬆吃完繼續行程。', lat: 22.2797, lng: 114.1823, color: '#993C1D', q: '22.2797,114.1823' },
+      { time: '17:00', name: '太平山頂纜車', note: '建議 17:40 前抵達，先在纜車站旁景觀咖啡廳邊喝咖啡邊看軌道。搭纜車上山同時捕捉日落＋世界級夜景！', lat: 22.2777, lng: 114.1592, color: '#185FA5', q: '22.2777,114.1592' },
+      { time: '19:30', name: '張保仔號 Aqualuna', note: '預約 19:30 幻彩詠香江燈光秀場次，從海上看燈光秀超美！船上附一杯飲料。務必提前線上預約。', lat: 22.2931, lng: 114.1707, color: '#993556', q: '22.2931,114.1707' },
+      { time: '21:00', name: '尖沙咀晚餐', note: '燈光秀結束後就近在尖沙咀用晚餐。星光大道周邊或 K11 Musea 附近都有不少選擇。', lat: 22.2975, lng: 114.1722, color: '#993C1D', q: '22.2975,114.1722' },
+    ]
+  },
+  {
+    tip: '<strong>今日提醒：</strong>瑞記咖啡週六日公休，週五有開 ✅ 早去早好，人多容易滿座。祥興記生煎包爆漿，別穿白衣！M+ 博物館週五開到 22:00，記得穿襪子。',
+    stops: [
+      { time: '08:30', name: '瑞記咖啡（上環熟食中心）', note: '必點：西多士、瓶裝凍奶茶（不加冰、味道超濃）、餐蛋麵。週五有開，早去卡位！', lat: 22.2861, lng: 114.1498, color: '#993C1D', q: '22.2861,114.1498' },
+      { time: '10:30', name: 'M+ 博物館', note: '亞洲首間全球視覺文化博物館，清水模建築超有設計感。週五開到 22:00。進互動展區要穿襪子。包包太大可寄物（HK$5/小時）。', lat: 22.3005, lng: 114.1595, color: '#185FA5', q: '22.3005,114.1595' },
+      { time: '13:00', name: '祥興記生煎包', note: '⚠ 生煎包皮脆充滿湯汁會爆漿！別穿白色或新衣服前往。Michelin 推薦，只收刷卡付款。', lat: 22.2977, lng: 114.1716, color: '#993C1D', q: '22.2977,114.1716' },
+      { time: '14:30', name: '恆香冰室', note: '菠蘿油＋流沙西多士，把手上的港幣花光！影片推薦的最後一站。', lat: 22.2819, lng: 114.1889, color: '#993C1D', q: '22.2819,114.1889' },
+      { time: '16:30', name: '仕德福酒店取行李', note: '辦理退房、取回寄存的行李，準備前往機場。', lat: 22.2819, lng: 114.1889, color: '#534AB7', q: '22.2819,114.1889' },
+      { time: '17:30', name: '前往香港國際機場', note: '地鐵到香港站，搭機場快線約 24 分鐘抵達。建議 18:00 前到機場辦理 CI 0936 登機手續。20:40 起飛，22:10 回到高雄！', lat: 22.3080, lng: 113.9185, color: '#534AB7', q: '22.3080,113.9185' },
+    ]
+  }
+];
 
-<div class="day-container">
-    <div class="day-header">DAY 3 | 3月26日</div>
-    <div class="spot">
-        <span class="spot-name">樂天世界 (Lotte World) 🎡</span>
-        <div class="note">室內外遊樂園，建議提早去排隊。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.com/v5/search/Lotte+World" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/Lotte+World" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
-        </div>
-    </div>
-    <div class="spot">
-        <span class="spot-name">聖水洞 Dior / Softbar / 韓貞仙 🍦</span>
-        <div class="note">🍫 **必買：** 韓貞仙「杜拜巧克力」，下午易售罄。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.com/v5/search/Dior+Seongsu" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/Dior+Seongsu" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
-        </div>
-    </div>
-    <div class="spot">
-        <span class="spot-name">ITALYGUKSI SEONGSU 🍝</span>
-        <div class="note">聖水洞人氣義式料理，適合晚餐。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.com/v5/search/ITALYGUKSI+SEONGSU" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/ITALYGUKSI+SEONGSU" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
-        </div>
-    </div>
-</div>
+let curDay = 0, curStop = 0;
+let curLat = 0, curLng = 0;
 
-<div class="day-container">
-    <div class="day-header">DAY 4 | 3月27日</div>
-    <div class="spot">
-        <span class="spot-name">Lotteria 🍔 ➔ 弘大商圈 🛍️</span>
-        <div class="note">韓國本土炸雞漢堡；弘大下午三點後街頭表演最熱鬧。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.com/v5/search/Lotteria+Hongdae" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/Lotteria+Hongdae" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
+function switchDay(d) {
+  curDay = d; curStop = 0;
+  document.querySelectorAll('.day-tab').forEach((t,i) => t.classList.toggle('active', i===d));
+  document.getElementById('tip-box').innerHTML = days[d].tip;
+  renderList(); showStop(0);
+}
+
+function renderList() {
+  const stops = days[curDay].stops;
+  document.getElementById('stop-list').innerHTML = stops.map((s,i) => {
+    const bg = s.color + '18';
+    return `<div class="stop-card ${i===curStop?'active':''}" onclick="showStop(${i})" id="sc-${i}">
+      <div class="stop-row">
+        <div class="stop-num" style="background:${bg};color:${s.color}">${i+1}</div>
+        <div style="flex:1;min-width:0">
+          <div class="stop-time">${s.time}</div>
+          <div class="stop-name">${s.name}</div>
+          <div class="stop-note">${s.note}</div>
         </div>
-    </div>
-    <div class="spot">
-        <span class="spot-name">汝矣島漢江公園 ⛲️</span>
-        <div class="note">🍜 **體驗：** 自助煮泡麵 + 漢江野餐。</div>
-        <div class="btn-group">
-            <a href="https://map.naver.com/v5/search/Yeouido+Hangang+Park" class="btn btn-n" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver</a>
-            <a href="https://www.google.com/maps/search/Yeouido+Hangang+Park" class="btn btn-g" target="_blank"><i class="fab fa-google"></i> Google</a>
-        </div>
-    </div>
-</div>
+      </div>
+    </div>`;
+  }).join('');
+}
 
-<div class="day-container">
-    <div class="day-header">DAY 5 | 3月28日</div>
-    <div class="spot">
-        <span class="spot-name">仁川機場 T2 回程 ✈️</span>
-        <div class="note">⚠️ **最後提醒：** 班機 12:00 起飛，務必 09:30 抵達機場辦退稅。</div>
-    </div>
-</div>
+function showStop(i) {
+  curStop = i;
+  const s = days[curDay].stops[i];
+  curLat = s.lat; curLng = s.lng;
+  document.querySelectorAll('.stop-card').forEach((c,j) => c.classList.toggle('active', j===i));
+  document.getElementById('map-frame').src = `https://maps.google.com/maps?q=${s.lat},${s.lng}&z=16&output=embed`;
+  document.getElementById('mf-name').textContent = s.name;
+  document.getElementById('mf-time').textContent = s.time + '　' + s.note.substring(0,40) + (s.note.length>40?'…':'');
+}
 
-<footer>
-    <p>機票代號: FNNDVY | 祝 尚潾 旅途愉快！</p>
-</footer>
+function openGmap() {
+  window.open(`https://www.google.com/maps/search/?api=1&query=${curLat},${curLng}`, '_blank');
+}
 
+switchDay(0);
+</script>
 </body>
 </html>
